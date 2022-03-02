@@ -1,0 +1,26 @@
+<annotation>
+	<folder>collectedimages</folder>
+	<filename>yes.a957a8b0-9a3d-11ec-90d8-b06088df0b6e.jpg</filename>
+	<path>C:\Users\mecatronica.ti\Documents\proyectos\LSC\RealTimeObjectDetection\Tensorflow\workspace\images\collectedimages\yes.a957a8b0-9a3d-11ec-90d8-b06088df0b6e.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Yes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>476</xmin>
+			<ymin>178</ymin>
+			<xmax>565</xmax>
+			<ymax>263</ymax>
+		</bndbox>
+	</object>
+</annotation>

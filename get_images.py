@@ -10,7 +10,16 @@ labels = ['hello', 'thanks', 'yes', 'no', 'iloveyou']
 num_imgs = 15
 label_count = 0
 imgs_count = 0
+my_time = 0
+my_timer = False
 
+def my_timmer():
+    global my_time
+    global my_timer
+    my_time-=1
+    time.sleep(0.5)
+    if my_time == 0:
+        my_timer = True
 
 def create_directory(label):
     os.mkdir(os.path.join(IMAGES_PATH,label))
@@ -31,22 +40,32 @@ def save_img(frame, label):
 
 create_directory(labels[label_count])
 text = 'hola mundo'
-cap = cv2.VideoCapture(0)
-
+cap = cv2.VideoCapture(1)
 
 while (cap.isOpened()):
-    text = f"label: {labels[label_count]} image_number:{imgs_count}"
+    text = f"label: {labels[label_count]} image_number:{imgs_count} time = {my_time}"
     _,frame = cap.read()
     frame_copy = frame.copy()
     cv2.putText(frame_copy,text,(20,20),cv2.FONT_HERSHEY_SIMPLEX,0.65,(0,0,255),2,cv2.LINE_AA)
     cv2.imshow('frame',frame_copy)
+    
+    if my_timer and my_time<=0:
+        my_timer = False
+        my_time = 0
+        if label_count > 4:
+                break
+        save_img(frame,labels[label_count])
+    
+    if my_time > 0:
+        my_timmer()
+    
     k = cv2.waitKey(1) & 0xFF 
     if k == ord('q'):
         break
     if k == ord ('c'):
-        if label_count > 4:
-            break
-        save_img(frame,labels[label_count])
+        my_time=6
+        my_timmer()
+       
         
 cap.release()
 cv2.destroyAllWindows()
