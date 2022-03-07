@@ -25,5 +25,8 @@ labels = [
 #         f.write('\tid:{}\n'.format(label['id']))
 #         f.write('}\n')
         
-os.system (f"python {SCRIPTS_PATH}/generate_tfrecord.py -x{IMAGE_PATH}/train' -l {ANNOTATION_PATH}/label_map.pbtxt -o {ANNOTATION_PATH}/train.record")
-os.system (f"python {SCRIPTS_PATH}/generate_tfrecord.py -x{IMAGE_PATH}/test' -l {ANNOTATION_PATH}/label_map.pbtxt -o {ANNOTATION_PATH}/test.record")
+# os.system (f"python {SCRIPTS_PATH}/generate_tfrecord.py -x {IMAGE_PATH}/train -l {ANNOTATION_PATH}/label_map.pbtxt -o {ANNOTATION_PATH}/train.record")
+# os.system (f"python {SCRIPTS_PATH}/generate_tfrecord.py -x {IMAGE_PATH}/test -l {ANNOTATION_PATH}/label_map.pbtxt -o {ANNOTATION_PATH}/test.record")
+
+CUSTOM_MODEL_NAME = 'my_ssd_mobnet'
+
