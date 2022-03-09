@@ -71,7 +71,7 @@ while True:
                 agnostic_mode=False)
 
     cv2.imshow('object detection',  cv2.resize(image_np_with_detections, (800, 600)))
-    
+    #cv2.imshow('object detection',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         cap.release()
         cv2.destroyAllWindows()

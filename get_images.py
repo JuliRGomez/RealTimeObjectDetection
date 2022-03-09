@@ -38,9 +38,9 @@ def save_img(frame, label):
         label_count+=1
         create_directory(labels[label_count])
 
-create_directory(labels[label_count])
+#create_directory(labels[label_count])
 text = 'hola mundo'
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 while (cap.isOpened()):
     text = f"label: {labels[label_count]} image_number:{imgs_count} time = {my_time}"
